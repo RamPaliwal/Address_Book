@@ -47,9 +47,40 @@ public class AddressBookSystem
         System.out.println("Welcome to Address Book Program.... \n");
 
         AddressBookSystem abs = new AddressBookSystem();
-        abs.addContact();
-        abs.editContact();
-        abs.deleteContact();
+        abs.AddressBook();
+    }
+
+    public void AddressBook()
+    {
+        while (true)
+        {
+            System.out.println("Address Book System");
+            System.out.println("1. Add Contact");
+            System.out.println("2. Edit Contact");
+            System.out.println("3. Delete Contact");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+            sc.nextLine();
+
+            switch (choice)
+            {
+                case 1:
+                    addContact();
+                    break;
+                case 2:
+                    editContact();
+                    break;
+                case 3:
+                    deleteContact();
+                    break;
+                case 4:
+                    System.out.println("Exiting...");
+                    return;
+                default:
+                    System.out.println("Invalid choice...");
+            }
+        }
     }
 
     void addContact()
@@ -77,7 +108,7 @@ public class AddressBookSystem
         System.out.println("Contact added successfully! \n");
     }
 
-     void editContact()
+    void editContact()
     {
         System.out.println("Enter the first name of the contact to edit: ");
         String fnameToEdit = sc.nextLine();
